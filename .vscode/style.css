@@ -1,0 +1,361 @@
+:root {
+    --gris-clair: #ededed;
+    --gris-fonce: #444;
+    --gris-fonce-pur: #2d2d2d;
+    --bleu-fonce: #1d1e3d;
+    --bleu-turquoise: #03469d;
+    --rose: #db0059;
+    --police-texte: "Source Sans 3", sans-serif;
+    --titre-section: "Mali", cursive;
+    --menu-size: 1.5rem;
+    --titre-page-size: 1.875rem;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+    font-size: 17px;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    color: white;
+    background: url(img/4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.865);
+}
+
+/* On s'assure que le h1 et h2 ne dépassent pas la nav */
+
+header > *{
+    position: relative;
+    z-index: 2;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+header nav {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    position: fixed;
+    width: 60%;
+    justify-content: center;
+    font-weight: 600;
+    background-color: rgba(17, 17, 17, 0.639);
+    backdrop-filter: blur(8px);
+    transition: opacity 0.4s ease;
+    z-index: 3;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+header nav ul li {
+    list-style: none;
+    padding: initial;
+    overflow: initial;
+    min-width: initial;
+}
+
+header nav ul li + li {
+    padding-left: 1rem;
+}
+
+header nav ul li a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+header nav ul li a:hover {
+    font-weight: bold;
+}
+
+#current {
+    border: 3px solid var(--bleu-turquoise);
+    border-top: 0;
+    border-right: 0;
+    padding: 13px 15px;
+    text-align: center;
+}
+
+/* TITRES */
+h1 {
+    color: #FFFFFF;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+header h2 {
+    width: 35%;
+    text-align: center;
+    margin: auto;
+    margin-top: 4rem;
+    font-size: 2rem;
+    font-family: var(--titre-section);
+    color: var(--bleu-turquoise);
+    font-weight: 900;
+    border-radius: 25px;
+    border: none;
+    padding: 5px 10px;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.954);
+    transition: opacity 0.4s ease;
+}
+
+/* MAIN */
+main > div {
+    background-color: aliceblue;
+    padding-top: 3rem !important;
+}
+
+/* SECTIONS */
+.apropos > p,
+.competences > p {
+    margin-top: 5px;
+    color: var(--gris-fonce);
+    font-size: 17px;
+    text-align: center;
+}
+
+.apropos {
+    padding-bottom: 2rem;
+}
+
+.apropos article {
+    align-items: center;
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.apropos article img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    width: 50%;
+    height: 100%;
+    box-shadow: 1px 3px 15px rgba(25, 25, 25, 0.644);
+}
+
+.apropos article div {
+    width: 50%;
+}
+
+.apropos article > div > span {
+    color: var(--gris-fonce-pur);
+    margin-top: 2rem;
+}
+
+.apropos article > div > span p:last-child {
+    margin-top: 1rem;
+}
+
+.apropos article div div {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(25, 25, 25, 0.304);
+    border-radius: 15px;
+}
+
+.apropos article div div p {
+    color: var(--gris-fonce);
+}
+
+.apropos article div div i {
+    font-size: 1.2rem;
+    height: max-content;
+    margin-right: 1rem;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+}
+
+.apropos article div div .fa-code {
+    color: #377bd4;
+    background-color: #447bc252;
+}
+
+.apropos article div div .fa-user-group {
+    color: #d339d3;
+    background-color: #ad44c261;
+}
+
+.apropos article div div .fa-lightbulb {
+    padding: 13px 16.5px;
+    color: #0dc936;
+    background-color: #44c2555e;
+}
+
+.apropos h2,
+.competences h2 {
+    font-size: 2.7rem;
+    text-align: center;
+    color: var(--bleu-turquoise);
+    font-family: var(--titre-section);
+}
+
+
+/* BOUTONS & LIENS */
+.contact {
+    border-radius: 25px;
+    border: none;
+    padding: 5px 10px;
+    background: var(--bleu-turquoise);
+}
+
+.project {
+    border: 3px solid var(--bleu-turquoise);
+    padding: 5px 10px;
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 18%;
+    margin: auto;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.project:hover {
+    font-weight: bold;
+    background-color: #bfb9b930;
+}
+
+.link {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.link a {
+    text-decoration: none;
+    color: var(--bleu-turquoise);
+    border-radius: 50%;
+    padding: 12px;
+    background: #FFFFFF;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.link a:hover {
+    color: #FFFFFF;
+    background: var(--bleu-turquoise);
+}
+
+.competences {
+    margin-top: 3rem;
+}
+
+.competences article {
+    justify-content: center;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.competences article > div {
+    width: 30%;
+    padding: 1rem;
+    background: aliceblue;
+    box-shadow: 0px 2px 5px rgba(25, 25, 25, 0.304);
+    border-radius: 15px;
+}
+
+.competences article > div h3 {
+    background: linear-gradient(to right, var(--bleu-turquoise), #8f3cdd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.competences ul li {
+    list-style: none;
+    margin-left: 0;
+}
+
+.competences ul {
+    padding-left: 0;
+}
+
+.competences article li span:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.competences li .bar {
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.competences li .bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--bleu-turquoise), #8f3cdd);
+    border-radius: 20px;
+}
+
+
+#React .bar::before {
+    width: 80%;
+}
+
+#Next .bar::before {
+    width: 70%;
+}
+
+#Html .bar::before {
+    width: 80%;
+}
