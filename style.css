@@ -31,7 +31,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 750px;
+    height: 750px;
     padding-top: 80px;
 }
 
@@ -998,26 +998,121 @@ footer>p {
     text-align: center;
 }
 
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 1024px) {
 
     /* ❌ Cacher la navigation */
     header nav {
         display: none;
     }
 
+    header {
+        height: 900px;
+    }
+
     body {
-        font-size: 1.5rem;
+        font-size: 1.6rem !important;
+    }
+
+    .competences article>div h3 {
+        font-size: 2.3rem;
+    }
+
+    .container {
+        width: 97%;
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 5.1rem;
         width: 90%;
         margin-top: 3rem;
     }
 
     header h2 {
         width: 70%;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
+    }
+
+    .project {
+        font-size: 1.7rem;
+    }
+
+    .apropos h2,
+    .competences h2,
+    .projets h2,
+    .contact h2 {
+        font-size: 3.2rem;
+    }
+
+    .apropos>p,
+    .competences>p,
+    .projets>p,
+    .contact>p {
+        font-size: 28px;
+    }
+
+    .apropos article div div p {
+        font-size: 19px;
+    }
+
+    .apropos article div div li {
+        font-size: 19px;
+    }
+
+    .slide>div h3 {
+        font-size: 3rem;
+    }
+
+    .see-more {
+        font-size: 1.4rem;
+        border-radius: 15px;
+
+    }
+
+    .projets article .langage span {
+        font-size: 20px;
+        border-radius: 20px;
+        padding: .8px 10px;
+        padding-top: 2px;
+    }
+
+    .apropos article div div i {
+        font-size: 1.6rem;
+    }
+
+    .arrow {
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 3.2rem;
+        width: initial;
+        height: initial;
+    }
+
+    .arrow.left {
+        margin-left: 1rem;
+    }
+
+    .arrow.right {
+        margin-right: 1rem;
+    }
+
+    .projets article .code a:first-child {
+        font-size: 1.8rem;
+    }
+
+    .projets article .code a::before {
+        font-size: 1.7rem !important;
+    }
+
+    .link a {
+        font-size: 1.9rem;
+    }
+
+    .infocontact ul li::before {
+        font-size: 1.7rem;
+    }
+
+    .fa-arrow-down::before {
+        font-size: 50px;
     }
 
     .icon {
@@ -1045,6 +1140,10 @@ footer>p {
         padding-bottom: 0;
     }
 
+    .slide>div p {
+        font-size: 1.3rem;
+    }
+
     #slide2 {
         justify-content: center;
     }
@@ -1059,6 +1158,20 @@ footer>p {
     form.contactform {
         margin-left: 0;
         margin-top: 2rem;
+    }
+
+    form.contactform label {
+
+        font-size: 1.8rem;
+    }
+
+    form.contactform input,
+    textarea {
+        font-size: 22px;
+    }
+
+    form.contactform button {
+        font-size: 1.7rem;
     }
 
     .slide {
@@ -1085,6 +1198,14 @@ footer>p {
 
     footer article>div:last-child {
         text-align: center;
+    }
+
+    footer article div>h3 {
+        font-size: 2.5rem;
+    }
+
+    footer article>div:last-child a {
+        font-size: 35px;
     }
 
     .middlefooter {
