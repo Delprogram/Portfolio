@@ -998,7 +998,7 @@ footer>p {
     text-align: center;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px)  {
+@media screen and (max-width: 1024px)  {
 
     /* ❌ Cacher la navigation */
     header nav {
