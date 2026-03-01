@@ -1005,6 +1005,10 @@ footer>p {
         display: none;
     }
 
+    body {
+        font-size: 1.5rem;
+    }
+
     h1 {
         font-size: 4rem;
         width: 90%;
@@ -1029,7 +1033,7 @@ footer>p {
     }
 
     .apropos article>img {
-        height: 90vh;
+        height: 60vh;
     }
 
     .competences article>div {
