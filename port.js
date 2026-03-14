@@ -43,16 +43,16 @@ dots.forEach((dot, i) => {
 document.querySelectorAll(".see-more").forEach(button => {
     button.addEventListener("click", () => {
         const description = button.previousElementSibling;
-        const parentDiv = button.parentElement; // div directement contenant le paragraphe et le bouton
-        const codeDiv = parentDiv.querySelector('.code'); // prend seulement le .code de ce slide
+        const parentDiv = button.parentElement; 
+        const codeDiv = parentDiv.querySelector('.code');
 
         description.classList.toggle("active");
 
         if (description.classList.contains("active")) {
-            codeDiv.style.paddingBottom = '3rem'; // augmente le padding
+            codeDiv.style.paddingBottom = '3rem'; 
             button.textContent = "Voir moins ▲";
         } else {
-            codeDiv.style.paddingBottom = ''; // revient à la valeur initiale
+            codeDiv.style.paddingBottom = '';
             button.textContent = "Voir plus ▼";
         }
     });
@@ -71,3 +71,16 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 observer.observe(section);
+
+emailjs.init("C6XhxCQ_8gpWb5xg4");
+
+document.querySelector(".contactform").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_z7nke1j", "template_1mqtb5k", this)
+        .then(() => {
+            alert("Message envoyé ✅");
+            this.reset();
+        })
+        .catch(() => alert("Erreur ❌"));
+});
