@@ -19,7 +19,7 @@
 }
 
 body {
-    font-size: 17px;
+    font-size: 19px;
     margin: 0;
 }
 
@@ -499,7 +499,7 @@ ul li {
 }
 
 .competences.animate #javascript .bar::before {
-    width: 60%;
+    width: 70%;
 }
 
 .competences.animate #wordpress .bar::before {
@@ -540,6 +540,10 @@ ul li {
 
 .competences.animate #Linux .bar::before {
     width: 30%;
+}
+
+.competences.animate #java .bar::before {
+    width: 80%;
 }
 
 
@@ -999,6 +1003,10 @@ footer>p {
 }
 
 @media screen and (max-width: 1024px) {
+    body {
+        font-size: calc(17px + 1rem) !important;
+        /* = 2rem */
+    }
 
     /* ❌ Cacher la navigation */
     header nav {
@@ -1009,12 +1017,9 @@ footer>p {
         height: 900px;
     }
 
-    body {
-        font-size: 1.6rem !important;
-    }
 
     .competences article>div h3 {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
 
     .container {
@@ -1022,18 +1027,19 @@ footer>p {
     }
 
     h1 {
-        font-size: 5.1rem;
+        font-size: 6rem;
         width: 90%;
         margin-top: 3rem;
     }
 
     header h2 {
-        width: 70%;
-        font-size: 1.7rem;
+        width: 90%;
+        font-size: 3rem;
+        border-radius: 38px;
     }
 
     .project {
-        font-size: 1.7rem;
+        font-size: 3rem;
     }
 
     .apropos h2,
@@ -1051,11 +1057,11 @@ footer>p {
     }
 
     .apropos article div div p {
-        font-size: 19px;
+        font-size: 1.8rem;
     }
 
     .apropos article div div li {
-        font-size: 19px;
+        font-size: 1.8rem;
     }
 
     .slide>div h3 {
@@ -1076,7 +1082,7 @@ footer>p {
     }
 
     .apropos article div div i {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 
     .arrow {
@@ -1104,15 +1110,20 @@ footer>p {
     }
 
     .link a {
-        font-size: 1.9rem;
+        font-size: 3.5rem;
+        padding: 1.2rem;
     }
 
     .infocontact ul li::before {
-        font-size: 1.7rem;
+        font-size: 2.3rem;
+    }
+
+    .infocontact h3 {
+        font-size: 2rem;
     }
 
     .fa-arrow-down::before {
-        font-size: 50px;
+        font-size: 90px;
     }
 
     .icon {
@@ -1141,7 +1152,7 @@ footer>p {
     }
 
     .slide>div p {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     #slide2 {
