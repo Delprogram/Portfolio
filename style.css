@@ -1012,10 +1012,7 @@ footer>p {
     }
 
     header {
-        background-attachment: scroll;
-        background-size: cover;
-        background-position: center center;
-        height: 200vh;
+        height: 900px;
     }
 
 
@@ -1045,7 +1042,7 @@ footer>p {
     }
 
     .icon {
-        font-size: 80px;
+        font-size: 90px;
     }
 
     .apropos h2,
