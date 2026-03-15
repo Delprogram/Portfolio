@@ -77,10 +77,19 @@ emailjs.init("C6XhxCQ_8gpWb5xg4");
 document.querySelector(".contactform").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_z7nke1j", "template_1mqtb5k", this)
+    const templateParams = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
+
+    emailjs.send("service_6z8k7i9", "template_1mqtb5k", templateParams)
         .then(() => {
             alert("Message envoyé ✅");
             this.reset();
         })
-        .catch(() => alert("Erreur ❌"));
+        .catch((error) => {
+            console.log(error);
+            // alert("Erreur ❌ : " + JSON.stringify(error));
+        });
 });

@@ -1118,6 +1118,11 @@ footer>p {
         font-size: 1.9rem !important;
     }
 
+    .dots span {
+        width: 17px;
+        height: 17px;
+    }
+
     .link a {
         font-size: 3.5rem;
         margin-top: 4rem;
