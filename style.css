@@ -526,8 +526,12 @@ ul li {
     width: 65%;
 }
 
-.competences.animate #PostgreSQL .bar::before {
-    width: 30%;
+.competences.animate #SQL .bar::before {
+    width: 60%;
+}
+
+.competences.animate #node .bar::before {
+    width: 50%;
 }
 
 .competences.animate #Git .bar::before {
@@ -544,6 +548,10 @@ ul li {
 
 .competences.animate #java .bar::before {
     width: 80%;
+}
+
+.competences.animate #figma .bar::before {
+    width: 70%;
 }
 
 
@@ -606,6 +614,11 @@ ul li {
 
 .slide>div #streetart:hover {
     content: url("img/streetart2.png");
+    transform: scale(1.1);
+}
+
+.slide>div #farm:hover {
+    content: url("img/farm.png");
     transform: scale(1.1);
 }
 
@@ -749,9 +762,7 @@ ul li {
     padding-right: 1rem;
 }
 
-#slide2 {
-    justify-content: space-around;
-}
+
 
 
 .dots {
@@ -1168,10 +1179,6 @@ footer>p {
 
     .slide>div p {
         font-size: 2rem;
-    }
-
-    #slide2 {
-        justify-content: center;
     }
 
     .apropos article img,
