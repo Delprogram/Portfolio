@@ -554,6 +554,9 @@ ul li {
     width: 70%;
 }
 
+.competences.animate #postman .bar::before {
+    width: 60%;
+}
 
 /* #Aws .bar::before {
     width: 65%;
