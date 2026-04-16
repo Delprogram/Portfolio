@@ -345,14 +345,36 @@ main>div {
 .project {
     border: 3px solid var(--bleu-turquoise);
     padding: 5px 10px;
-    display: block;
     text-align: center;
     font-size: 1.2rem;
-    width: 18%;
-    margin: auto;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.link_cv {
+    width: 100%;
+    margin: auto;
     margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cv {
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+    color: var(--bleu-turquoise);
+}
+
+.cv:hover {
+    background: var(--bleu-turquoise);
+    color: white;
 }
 
 .project:hover {
@@ -1051,7 +1073,15 @@ footer>p {
     }
 
     .project {
+        font-size: 3rem;
+    }
+
+    .link_cv {
         margin-top: 4rem;
+        flex-direction: column;
+    }
+
+    .cv {
         font-size: 3rem;
     }
 
