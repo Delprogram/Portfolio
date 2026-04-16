@@ -163,8 +163,8 @@ html {
 }
 
 .bottom-left {
-    bottom: 13rem;
-    left: 30rem;
+    bottom: 10rem;
+    left: 28rem;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -349,6 +349,11 @@ main>div {
     font-size: 1.2rem;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.alternance {
+    margin-top: 10px;
+    text-align: center;
 }
 
 .link_cv {
