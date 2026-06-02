@@ -31,7 +31,7 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 750px;
+    height: 800px;
     padding-top: 80px;
 }
 
@@ -250,6 +250,7 @@ main>div {
 
 .apropos .article1 {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     gap: 3rem;
 }
@@ -276,7 +277,7 @@ main>div {
     background-color: rgba(180, 196, 220, 0.559);
 }
 
-.apropos .article1>div>span p + p {
+.apropos .article1>div>span p+p {
     margin-top: 1rem;
 }
 
@@ -1073,7 +1074,12 @@ footer>p {
     }
 
     header {
-        height: 1000px;
+        height: 1150px;
+    }
+
+    .alternance {
+        font-size: 2rem;
+        width: 80%;
     }
 
 
@@ -1126,6 +1132,10 @@ footer>p {
     .projets>p,
     .contact>p {
         font-size: 28px;
+    }
+
+    .apropos .article1 {
+        margin-bottom: 4rem;
     }
 
     .apropos .article1 div div p {
@@ -1224,7 +1234,7 @@ footer>p {
 
     .apropos article>img {
         height: 60vh;
-        width: 100%!important;
+        width: 100% !important;
     }
 
     .competences article>div {
