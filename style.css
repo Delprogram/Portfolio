@@ -653,6 +653,11 @@ ul li {
     transform: scale(1.1);
 }
 
+.slide>div #miffa:hover {
+    content: url("img/miffa2.png");
+    transform: scale(1.1);
+}
+
 .slide>div #jsarena:hover {
     content: url("img/jsarena2.png");
     transform: scale(1.1);
