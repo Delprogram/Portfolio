@@ -1,0 +1,332 @@
+/* ============================================
+   PORTFOLIO IMPROVEMENTS — Fidel AHOUANHOU
+   Ajouter dans <head> après le CSS existant :
+   <link rel="stylesheet" href="portfolio-improvements.css">
+   ============================================ */
+
+/* ── VARIABLES DARK/LIGHT MODE ── */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card-bg: #f5f5f5;
+  --border: #e0e0e0;
+  --accent: #6c63ff;
+  --badge-bg: #dcfce7;
+  --badge-text: #16a34a;
+  --badge-dot: #22c55e;
+  --filter-active-bg: #6c63ff;
+  --filter-active-text: #fff;
+  --filter-bg: #f0f0f0;
+  --filter-text: #333;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f0f;
+  --text: #e5e5e5;
+  --card-bg: #1a1a1a;
+  --border: #2a2a2a;
+  --badge-bg: #14532d;
+  --badge-text: #86efac;
+  --filter-bg: #1a1a1a;
+  --filter-text: #e5e5e5;
+}
+
+/* Applique les variables aux éléments principaux */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── BADGE DISPONIBILITÉ ── */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.availability-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--badge-dot);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── BOUTON DARK MODE ── */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.theme-toggle .label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ── FILTRES PROJETS ── */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding: 0 16px;
+}
+
+.filter-btn {
+  background: var(--filter-bg);
+  color: var(--filter-text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--filter-active-bg);
+  color: var(--filter-active-text);
+  border-color: var(--filter-active-bg);
+}
+
+/* Projet caché lors du filtrage */
+.project-card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+/* ── TIMELINE EXPÉRIENCE ── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 24px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(108,99,255,0.1);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+.timeline-date {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.timeline-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ── FORMULAIRE AMÉLIORÉ ── */
+.contact-form-improved .form-group {
+  margin-bottom: 16px;
+}
+
+.contact-form-improved label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.contact-form-improved input,
+.contact-form-improved textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contact-form-improved input:focus,
+.contact-form-improved textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.1);
+}
+
+.form-success {
+  display: none;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.form-success.visible {
+  display: block;
+  animation: fadeInDown 0.4s ease;
+}
+
+/* ── LAZY LOADING PLACEHOLDER ── */
+img[loading="lazy"] {
+  background: var(--card-bg);
+}
+
+/* ── LIENS SOCIAUX ACCESSIBLES ── */
+.social-link-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── OPEN GRAPH / SEO BADGE ── */
+.seo-badge {
+  display: none; /* Juste pour les métadonnées */
+}
+
+/* ── SCROLL TO TOP ── */
+.scroll-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(108,99,255,0.3);
+  z-index: 9998;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(108,99,255,0.4);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .theme-toggle .label {
+    display: none;
+  }
+
+  .project-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+}
