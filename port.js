@@ -548,5 +548,48 @@ form.addEventListener('submit', (e) => {
         });
 });
 
+/* ===== Voir le CV sans le télécharger ===== */
+const cvModal = document.querySelector('.cv-modal');
+const cvFrame = cvModal.querySelector('iframe');
+let cvLastFocus = null;
+
+// Les navigateurs mobiles affichent mal un PDF intégré : on l'ouvre alors dans un nouvel onglet
+function canShowPdfInline() {
+    if (window.innerWidth <= 768) return false;
+    if ('pdfViewerEnabled' in navigator) return navigator.pdfViewerEnabled;
+    return true;
+}
+
+function openCv(url) {
+    const src = `${url}#view=FitH`;
+    if (cvFrame.getAttribute('src') !== src) cvFrame.setAttribute('src', src);
+    cvLastFocus = document.activeElement;
+    cvModal.hidden = false;
+    document.body.classList.add('no-scroll');
+    cvModal.querySelector('.cv-modal-close').focus();
+}
+
+function closeCv() {
+    cvModal.hidden = true;
+    document.body.classList.remove('no-scroll');
+    if (cvLastFocus) cvLastFocus.focus();
+}
+
+document.querySelectorAll('[data-cv-view]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (!canShowPdfInline()) return; // comportement normal : nouvel onglet
+        e.preventDefault();
+        openCv(link.getAttribute('href'));
+    });
+});
+
+cvModal.querySelector('.cv-modal-close').addEventListener('click', closeCv);
+cvModal.addEventListener('click', (e) => {
+    if (e.target === cvModal) closeCv();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !cvModal.hidden) closeCv();
+});
+
 /* ===== Année du footer ===== */
 document.querySelector('.year').textContent = new Date().getFullYear();

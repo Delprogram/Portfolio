@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfolio de Fidel Ahouanhou, développeur full-stack (Python, Django, Java, JavaScript, PHP) en Bachelor à CODA Orléans, à la recherche d'une alternance.">
+        content="Portfolio de Fidel Ahouanhou, développeur full-stack (Python, Django, Java, JavaScript, PHP) en 2e année de Bachelor à CODA Orléans, à la recherche d'une alternance.">
     <meta name="author" content="Fidel AHOUANHOU">
     <meta name="theme-color" content="#03469d">
     <meta property="og:type" content="website">
@@ -74,9 +74,13 @@
         <h1 class="glow-title">Fidel AHOUANHOU</h1>
         <div class="link_cv">
             <a href="#projets" class="project">Voir mes projets</a>
-            <a href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" class="cv"
-                download="CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf">
-                <i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger mon CV</a>
+            <span class="cv-group">
+                <a href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" class="cv" target="_blank" rel="noopener" data-cv-view>
+                    <i class="fa-regular fa-eye" aria-hidden="true"></i> Voir mon CV</a>
+                <a href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" class="cv cv-dl" download="CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"
+                    aria-label="Télécharger mon CV (PDF)" title="Télécharger mon CV (PDF)">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+            </span>
         </div>
         <div class="link">
             <a href="https://github.com/Delprogram" class="fa-brands fa-github" target="_blank" rel="noopener"
@@ -116,7 +120,7 @@
                                 carburant qui me pousse à aller plus loin.
                             </p>
                             <p class="reveal">
-                                Aujourd'hui étudiant en Bachelor Fullstack à CODA Orléans, fort de 3 ans de génie
+                                Aujourd'hui étudiant en 2e année de Bachelor Fullstack à CODA Orléans, fort de 3 ans de génie
                                 logiciel à l'IFRI-UAC, je construis des applications de bout en bout en Java, PHP,
                                 JavaScript, Python, Angular, Django, APIs REST, bases de données SQL. J'utilise aussi
                                 des outils d'IA comme Claude Code au quotidien, non pas pour remplacer ma réflexion,
@@ -247,7 +251,7 @@
                 <li class="timeline-item reveal">
                     <span class="timeline-icon school"><i class="fa-solid fa-graduation-cap"></i></span>
                     <div class="timeline-card">
-                        <span class="timeline-tag">Depuis 2025 · Formation</span>
+                        <span class="timeline-tag">2025 – 2028 · 2e année en cours</span>
                         <h3>Bachelor Développeur Web Fullstack</h3>
                         <p class="timeline-place">CODA — Orléans, France</p>
                         <p>Projets en équipe en contexte professionnel simulé : plateforme inclusive CapAccess
@@ -320,7 +324,7 @@
                         <h3><i class="fa-solid fa-gears" aria-hidden="true"></i> DevOps &amp; Outils</h3>
                         <ul>
                             <li style="--level:70%"><span><p>Git</p><p>Maîtrisé</p></span><span class="bar"></span></li>
-                            <li style="--level:80%"><span><p>Postman</p><p>Pratiqué</p></span><span class="bar"></span></li>
+                            <li style="--level:80%"><span><p>Postman / Bruno</p><p>Pratiqué</p></span><span class="bar"></span></li>
                             <li style="--level:50%"><span><p>Linux</p><p>Pratiqué</p></span><span class="bar"></span></li>
                             <li style="--level:50%"><span><p>Docker</p><p>Pratiqué</p></span><span class="bar"></span></li>
                         </ul>
@@ -577,9 +581,13 @@
                                 </span>
                             </li>
                         </ul>
-                        <a class="cv-inline" href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"
-                            download="CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"><i class="fa-solid fa-file-arrow-down"
-                                aria-hidden="true"></i> Télécharger mon CV (PDF)</a>
+                        <div class="cv-actions">
+                            <a class="cv-inline" href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" target="_blank" rel="noopener" data-cv-view><i
+                                    class="fa-regular fa-eye" aria-hidden="true"></i> Voir mon CV</a>
+                            <a class="cv-inline outline" href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"
+                                download="CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"><i
+                                    class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Télécharger (PDF)</a>
+                        </div>
                     </div>
                     <form class="contactform reveal" novalidate>
                         <label for="name">Nom</label>
@@ -650,6 +658,27 @@
                     class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
             <p class="lightbox-caption"><strong id="lightbox-title"></strong> <span class="lightbox-counter"></span>
             </p>
+        </div>
+    </div>
+
+    <!-- Visionneuse du CV -->
+    <div class="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" hidden>
+        <div class="cv-modal-box">
+            <div class="cv-modal-bar">
+                <strong id="cv-modal-title"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> CV — Fidel
+                    AHOUANHOU</strong>
+                <div class="cv-modal-actions">
+                    <a href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" download="CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf"
+                        aria-label="Télécharger le CV"><i class="fa-solid fa-download" aria-hidden="true"></i><span>
+                            Télécharger</span></a>
+                    <a href="assets/CV_Fidel_AHOUANHOU_Developpeur_Fullstack.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le CV dans un nouvel onglet"><i
+                            class="fa-solid fa-up-right-from-square" aria-hidden="true"></i><span> Nouvel
+                            onglet</span></a>
+                    <button type="button" class="cv-modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark"
+                            aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <iframe title="CV de Fidel AHOUANHOU" src="about:blank"></iframe>
         </div>
     </div>
 

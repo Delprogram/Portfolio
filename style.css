@@ -2332,3 +2332,125 @@ header h2 {
     color: #e07a12;
     background-color: #f0a14a40;
 }
+
+
+/* =========================================================
+   CV : voir sans télécharger
+   ========================================================= */
+.cv-group {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.cv-group .cv-dl {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 2rem;
+}
+
+.cv-actions .cv-inline {
+    margin-top: 0;
+}
+
+.cv-inline.outline {
+    color: var(--bleu-turquoise);
+    background: transparent;
+    border: 2px solid var(--bleu-turquoise);
+    padding: 8px 16px;
+}
+
+[data-theme="dark"] .cv-inline.outline {
+    color: #9cc2ff;
+    border-color: #6ea8ff;
+}
+
+.cv-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgba(5, 7, 30, .88);
+    backdrop-filter: blur(6px);
+}
+
+.cv-modal[hidden] {
+    display: none;
+}
+
+.cv-modal-box {
+    display: flex;
+    flex-direction: column;
+    width: min(900px, 100%);
+    height: min(92vh, 1200px);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1d1e3d;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+.cv-modal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .7rem 1rem;
+    color: white;
+    background: linear-gradient(90deg, var(--bleu-turquoise), #8f3cdd);
+}
+
+.cv-modal-bar strong {
+    font-family: var(--titre-section);
+    font-weight: 600;
+}
+
+.cv-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.cv-modal-actions a,
+.cv-modal-close {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: .9rem;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, .18);
+}
+
+.cv-modal-actions a:hover,
+.cv-modal-close:hover {
+    background: rgba(255, 255, 255, .32);
+}
+
+.cv-modal iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: #525659;
+}
+
+@media screen and (max-width: 600px) {
+    .cv-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cv-modal-actions span {
+        display: none;
+    }
+}
